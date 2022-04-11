@@ -4,7 +4,7 @@
   lineinfile:
     path: /etc/corosync/corosync.conf
     regexp: '^(\s+){{ key_name }}:'
-    line: "\t{{ key_name }}: {{ expected[name] }}"
+    line: "         {{ key_name }}: {{ expected[name] }}"
     insertafter: 'quorum {'
   register: config_updated
   when: ansible_check_mode
